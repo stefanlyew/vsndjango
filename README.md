@@ -3,8 +3,14 @@
 ### Requirements
 
 `python 2.7.10`
+`dj-database-url==0.3.0`
+`dj-static==0.0.6`
 `Django==1.8.3`
+`django-toolbelt==0.0.1`
+`gunicorn==19.3.0`
 `MySQL-python==1.2.5`
+`psycopg2==2.6.1`
+`static3==0.6.1`
 `wheel==0.24.0`
 
 ## Installation

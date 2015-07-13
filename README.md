@@ -2,12 +2,10 @@
 
 ### Requirements
 
-python 2.7.10
-```
-Django==1.8.3
-MySQL-python==1.2.5
-wheel==0.24.0
-```
+`python 2.7.10`
+`Django==1.8.3`
+`MySQL-python==1.2.5`
+`wheel==0.24.0`
 
 ## Installation
 
@@ -52,12 +50,13 @@ Vehicle Records from it
 ### Known Issues
 If you are receiving and error on "./manage.py import":
 this is probably because of carriage return differences between unix and mac
-make sure to convert CRLF to LF for the file vsn_data.csv
+please make sure to convert CRLF to LF for the file vsn_data.csv
 
 ### Areas for improvement, ideas for version 2, etc.
-I would like to learn how to write tests for Python
 
 The VSN number applied to each vehicle by each manufacturer will be in a variety
 of different formats.  We will need to extend the VSNDataParser into classes
 that can handle each manufacturer separately.  Different VSN's mean different
 things to each manufacturer.
+
+Would like to have test coverage for this project.

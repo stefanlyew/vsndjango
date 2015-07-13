@@ -8,5 +8,5 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         from django.conf import settings
-        parser = VSNDataParser(settings.STATICFILES_DIRS + '/vsn_data.csv')
+        parser = VSNDataParser(''.join(settings.STATICFILES_DIRS) + '/vsn_data.csv')
         parser.parse()

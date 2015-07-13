@@ -15,8 +15,7 @@ class Vehicle(models.Model):
     @classmethod
     def find_records_where_pattern_matches(self, serial_number):
       # Be paranoid and guard to validate well-formed serial
-      pattern = re.compile("^[A-Z]{6}[0-9]{6}$")
-      if not pattern.match(serial_number):
+      if not self.validate(serial_number):
         return self.objects.none()
 
       # Format serial_number with single quotes for SQL
@@ -32,6 +31,15 @@ class Vehicle(models.Model):
       # Order by pattern with fewer asterisks
       query_set = self.objects.filter(id__in=ids).order_by('wildcard_count')
       return query_set
+
+    @classmethod
+    def validate(self, serial_number):
+      pattern = re.compile("^[A-Z]{6}[0-9]{6}$")
+      return pattern.match(serial_number)
+
+    def __str__ (self):
+        return '' + str(self.year) + ' ' + self.make + ' ' + self.model + ' ' + self.trim_name + ' (' + self.serial_number_pattern + ' ' + str(self.vehicle_trim_id) + ')'
+
 
 
 class VSNDataParser:

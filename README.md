@@ -54,9 +54,12 @@ please make sure to convert CRLF to LF for the file vsn_data.csv
 
 ### Areas for improvement, ideas for version 2, etc.
 
+Would like to have test coverage for this project, but am new to python
+ecosystem and have much to learn.
+
 The VSN number applied to each vehicle by each manufacturer will be in a variety
 of different formats.  We will need to extend the VSNDataParser into classes
 that can handle each manufacturer separately.  Different VSN's mean different
 things to each manufacturer.
 
-Would like to have test coverage for this project.
+
